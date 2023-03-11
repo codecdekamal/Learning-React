@@ -1,0 +1,13 @@
+.grid {
+  height: fit-content;
+  width: 80vw;
+  display: grid;
+  grid-template-rows:repeat(5,50px);
+  border: 2px solid black;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  scroll-margin-block-end: 20px;
+  margin: 5px 0 10% 10%;
+  overflow:auto;
+}

@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+import Navbar from "./Navbar/Navbar";
+import ShoppingItem from "./ShoppingClothes/ShoppingItems";
+import Cart from "./cart/cart";
+import { useState } from "react";
+import ClothProvider from "./store/provideContext";
+const App = () => {
+  const handlingEvent = () =>{
+   setshowCart(true)
+  }
+  const handlingCancelEvent = () =>{
+    setshowCart(false)
+  }
+  const [showCart, setshowCart] = useState(false)
+  return (<ClothProvider>
+     {showCart && <Cart onCancel={handlingCancelEvent} />} 
+     
+    <main> 
+      <Navbar onClick={handlingEvent}/>
+          </main>  
+      <ShoppingItem />
+      </ClothProvider>
+  )
+  
+};
 export default App;
